@@ -1,0 +1,40 @@
+{
+  "info": {
+    "name": "Flask API - Random User",
+    "_postman_id": "random-user-flask-api",
+    "description": "Collection to test Flask API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Home Endpoint",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8080/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8080",
+          "path": [""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Random User Endpoint",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8080/random-user",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8080",
+          "path": ["random-user"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
