@@ -1,21 +1,14 @@
-# .devcontainer/Dockerfile
+# Base image
+FROM mcr.microsoft.com/vscode/devcontainers/python:3.10
 
-FROM mcr.microsoft.com/devcontainers/python:3.11
-
-# Install any OS-level dependencies if required
-# RUN apt-get update && apt-get install -y [your-deps]
-
+# Set working directory
 WORKDIR /workspace
 
-# Copy requirements and install
-COPY app/requirements.txt /tmp/requirements.txt
-RUN pip install --no-cache-dir -r /tmp/requirements.txt
+# Install dependencies
+RUN pip install --no-cache-dir flask
 
-# If you have any global tooling needed for onboarding tests:
-# RUN pip install pylint black mypy
+# Expose the Flask app port
+EXPOSE 5050
 
-# Expose the typical Flask port
-EXPOSE 5000
-
-# Default command (not strictly necessary since we run in dev mode)
-CMD [ "sleep", "infinity" ]
+# Set default command
+CMD ["bash"]

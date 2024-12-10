@@ -1,37 +1,20 @@
-// .devcontainer/devcontainer.json
 {
-    "name": "Flask Dev Environment",
-    "dockerFile": "Dockerfile",
-
-    // Use the cloned repository's root as the workspace folder
-    "workspaceFolder": "/workspace",
-
-    // Forward the Flask default port to the host
-    "forwardPorts": [5000],
-
-    // Set environment variables if needed
-    "containerEnv": {
-        "FLASK_APP": "app/main.py",
-        "FLASK_ENV": "development"
+    "name": "Python Flask Dev",
+    "build": {
+        "dockerfile": "Dockerfile"
     },
-
-    // Features can be added here - for example, Node, Git, etc.
-    "features": {
-        "ghcr.io/devcontainers/features/github-cli:1": {}
-    },
-
-    // Run 'pip install' to ensure all is up-to-date if code or requirements changed
-    "postCreateCommand": "pip install --no-cache-dir -r app/requirements.txt",
-
-    // Other customizations like extensions
     "customizations": {
         "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
             "extensions": [
                 "ms-python.python",
-                "ms-python.black-formatter",
-                "ms-python.isort",
-                "ms-python.flake8"
+                "ms-python.vscode-pylance"
             ]
         }
-    }
+    },
+    "postCreateCommand": "pip install -r requirements.txt",
+    "forwardPorts": [5050],
+    "remoteUser": "vscode"
 }
