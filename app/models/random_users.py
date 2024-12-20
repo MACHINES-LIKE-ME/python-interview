@@ -57,7 +57,7 @@ class User(BaseModel):
     gender: str
     name: Name
     location: Location
-    email: EmailStr
+    email: str
     login: Login
     dob: DateOfBirth
     registered: Registered
